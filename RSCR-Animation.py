@@ -11,39 +11,9 @@ import math
 import time
 
 
-# In[2]:
-
-
-get_ipython().run_line_magic('run', '"C:\\SBU-3\\Jupyter-Research\\RSCR\\Functions.ipynb"')
-
-
-# ![RSPR.PNG](attachment:RSPR.PNG)
-
-# In[ ]:
-
-
-# Fixed parameters, the order is 0,1,2,u1,u2
-Fixed_para = np.array([
-    [-1,0,0], #0 - fixed
-    [0.26124984, -0.34487408, -1.62759972],  #1 - fixed
-    [-0.2732265 ,  1.55609512, -3.65260601],  #2 - fixed
-    [ 0.97530392,  0.21334773, -0.05714027],  #u1 - fixed
-    [-0.89989856, -0.41033263, -0.14768114]   #u2 - fixed
-]);
-
-
-Initial_pos_3 = np.array([-0.00598834,  0.60561055, -2.64010286])
-Initial_pos_4 = np.array([ 1.08431971, -2.16704273, -1.58009279])
-Initial_u5 = np.array([-0.32498458, -0.17104471, -0.93012297])
-
-config_para = ComputeConfig(Fixed_para, Initial_pos_3, Initial_pos_4, Initial_u5);
-
-
-# In[ ]:
-
-
 mec_num = 1
 
+# Fixed parameters, the order is 0,1,2,u1,u2
 Fixed_para = np.array([
     [-1,0,0], #0 - fixed
     [ -1,0,0],  #1 - fixed
@@ -68,42 +38,6 @@ config_para = ComputeConfig(Fixed_para, Initial_pos_3, Initial_pos_4, Initial_u5
 print(config_para)
 
 
-# In[ ]:
-
-
-mec_num = 1
-
-Fixed_para = np.array([
-    [-1,0,0], #0 - fixed
-    [ 0,0,0],  #1 - fixed
-    [ 5,0,0],  #2 - fixed
-    [ 0,0,1],  #u1 - fixed
-    [np.sqrt(2)/2,0,  np.sqrt(2)/2  ]   #u2 - fixed
-]);
-
-fullyrotated_num = 0;
-temp_count = 0;
-
-step = 360; # this step decides how to devide 2pi
-mec_data = np.zeros((mec_num*27,9,3), dtype=np.float64);
-path_data = np.zeros((mec_num*27,step,3), dtype=np.float64);
-
-Initial_pos_3 = np.array([0, 2, 0])
-Initial_pos_4 = np.array([ 3, 4,  0 ])
-Initial_u5 = np.array([np.sqrt(2)/2, 1/2,1/2])
-#Initial_u5 = Initial_u5/np.linalg.norm(Initial_u5)
-
-config_para = ComputeConfig(Fixed_para, Initial_pos_3, Initial_pos_4, Initial_u5);
-print(config_para)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 scene = canvas(width=800,height=500,center=vector(0,4,0),background=color.white);
@@ -316,19 +250,7 @@ for i in range(step-1):
 print(time.time()-start_time,"s")
 
 
-# In[9]:
 
-
-step_para.shape
-
-
-# In[12]:
-
-
-step_para[0:100,6:9]
-
-
-# In[6]:
 
 
 scene = canvas(width=800,height=500,center=vector(0,0,0),background=color.white);
