@@ -1,5 +1,5 @@
 # Spatial-RSCR-Simulator
-This repository include code for RSCR mechanism simulation, animation and database generation.
+This repository include code for RSCR mechanism simulation, animation and database generation. The generated database can be downloaded at https://www.kaggle.com/datasets/purwarlab/rscr-mechanisms.
 
 ## Spatial RSCR Mechanism
 Spatial RSCR mechanism is a 1-DOF, close-look mechanism. It can generate various spatial path, and has potential application on rehabilitation mechanisms, flapping-wing robot, etc.
